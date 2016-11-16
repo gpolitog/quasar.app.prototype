@@ -3,6 +3,9 @@ import Vuex from 'vuex'
 import Quasar from 'quasar'
 import router from './router'
 import store from './store/store'
+import { sync } from 'vuex-router-sync'
+sync(store, router)
+
 import App from './App'
 
 Quasar.theme.set(__THEME)

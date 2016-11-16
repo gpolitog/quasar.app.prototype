@@ -4,19 +4,31 @@
       <quasar-search v-model="search" class="primary"></quasar-search>
     </div>
     <div class="layout-padding">
-      <div class="list item-delimiter" >
-        <div class="item" v-for="esp in listaComFiltro">
-            <div class="item-content">
-              <router-link to="/porMedico">
-                {{ esp.nome }}
-              </router-link>
-            </div>
-            <div class="item-secondary stamp">
-                <span class="label bg-grey-4 text-grey-8 ">{{ esp.total }}</span>
-            </div>
-        </div>
+      <div class="list item-delimiter">
+        <router-link tag="div" class="item item-link" v-for="esp in listaComFiltro" to="/porMedico">
+          <div class="item-content">
+            {{ esp.nome }}
+          </div>
+          <div class="item-secondary stamp">
+              <span class="label bg-grey-4 text-grey-8 ">{{ esp.total }}</span>
+          </div>
+        </router-link>
       </div>
     </div>
+
+    <quasar-fab
+      class="absolute-bottom-left"
+      @click="alert()"
+      classNames="primary"
+      active-icon="alarm"
+      icon="arrow_back"
+      direction="up"
+      style="left:10px; bottom:10px;"
+    >
+      <quasar-small-fab class="purple" @click.native="toast('mail')">mail</quasar-small-fab>
+      <quasar-small-fab class="secondary" @click.native="toast('alarm')">alarm</quasar-small-fab>
+    </quasar-fab>
+
   </div>
 </template>
 

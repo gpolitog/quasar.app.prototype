@@ -33,6 +33,7 @@ export default new VueRouter({
 
   routes: [
     { path: '/', component: load('agendarConsulta') }, // Default
+    { name: 'teste', path: '/teste', component: load('teste') }, // Default
     { name: 'agendarConsulta', path: '/agendarConsulta', component: load('agendarConsulta') }, // Default
     { name: 'porMedico', path: '/porMedico', component: load('porMedico') }, // Default
     { name: 'porEspecialidade', path: '/porEspecialidade', component: load('porEspecialidade') }, // Default

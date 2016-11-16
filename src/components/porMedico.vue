@@ -13,10 +13,10 @@
       <p class="caption">Disabled State</p>
       <quasar-search v-model="search" class="primary" disable></quasar-search> -->
       <div class="list item-delimiter">
-        <div class="item three-lines" v-for="(medico, index) in listaComFiltro">
+        <router-link to="/medicoDetalhes" tag="div" class="item three-lines" v-for="(medico, index) in listaComFiltro">
           <img class="item-primary" :src="getAvatarURL(medico.id)">
           <div class="item-content has-secondary">
-            <div><router-link to="/medicoDetalhes">{{ medico.nome }}</router-link></div>
+            <div>{{ medico.nome }}</div>
             <div>
               <span>{{ medico.especializacao }}</span><br />
               (crm {{ medico.crm }})
@@ -26,7 +26,7 @@
             {{ medico.tempo }}
           </div>
           <i class="item-secondary">location_on</i>
-        </div>
+        </router-link>
 
       </div>
     </div>
