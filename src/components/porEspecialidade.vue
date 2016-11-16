@@ -15,20 +15,6 @@
         </router-link>
       </div>
     </div>
-
-    <quasar-fab
-      class="absolute-bottom-left"
-      @click="alert()"
-      classNames="primary"
-      active-icon="alarm"
-      icon="arrow_back"
-      direction="up"
-      style="left:10px; bottom:10px;"
-    >
-      <quasar-small-fab class="purple" @click.native="toast('mail')">mail</quasar-small-fab>
-      <quasar-small-fab class="secondary" @click.native="toast('alarm')">alarm</quasar-small-fab>
-    </quasar-fab>
-
   </div>
 </template>
 
@@ -41,7 +27,6 @@ export default {
   },
   data () {
     return {
-      infiniteScrollOn: true,
       search: '',
       especilidades: [
         { nome: 'Acupuntura', total: '07' },

@@ -37,7 +37,7 @@ export default new VueRouter({
     { name: 'agendarConsulta', path: '/agendarConsulta', component: load('agendarConsulta') }, // Default
     { name: 'porMedico', path: '/porMedico', component: load('porMedico') }, // Default
     { name: 'porEspecialidade', path: '/porEspecialidade', component: load('porEspecialidade') }, // Default
-    { name: 'medicoDetalhes', path: '/medicoDetalhes', component: load('medicoDetalhes') }, // Default
+    { name: 'detalhesMedico', path: '/detalhesMedico', component: load('detalhesMedico') }, // Default
     { path: '*', component: load('error404') } // Not found
   ]
 })

@@ -5,6 +5,9 @@
     <quasar-layout>
       <div slot="header" class="toolbar primary">
         <!-- <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()"> -->
+        <button @click="backHistory()" v-if="showBackHistory()">
+            <i>arrow_back</i>
+          </button>
         <button @click="$refs.leftDrawer.open()">
           <i>menu</i>
         </button>
@@ -88,12 +91,25 @@ export default {
   methods: {
     ...mapActions([
       'setHeaderTitle'
-    ])
+    ]),
+    showBackHistory () {
+      if ([ 'porMedico', 'porEspecialidade', 'detalhesMedico' ].indexOf(this.route.name) > -1) {
+        return true
+      }
+      return false
+    },
+    backHistory () {
+      this.$router.go(-1)
+    }
   },
   computed: {
     ...mapState({
       general: state => {
         return state
+      },
+      route: state => {
+        const { route } = state
+        return route
       }
     })
   }
