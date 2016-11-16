@@ -28,10 +28,43 @@
               </quasar-collapsible>
               <quasar-collapsible icon="add_location" label="Locais de Atend.">
                 <div>
-                  Lorem ipsum dolor sit amet...
+
+                  <div class="item multiple-lines">
+                    <div class="item-content has-secondary">
+                      <div>Clínica Salutare</div>
+                      <div class="item-label item-smaller addressDetail">Rua Dona Francisca 3775</div>
+                      <div class="item-label item-smaller addressDetail">Saguaçú - CEP 89765003</div>
+                      <div class="item-label item-smaller addressDetail text-italic">( a 550m )</div>
+                      <div class="item-label item-smaller text-italic labelConvenio">
+                        <span class="label bg-green text-white">Unimed</span>
+                        <span class="label bg-red text-white">Agemed</span>
+                      </div>
+                    </div>
+                    <div class="item-secondary">
+                      <i>
+                        place
+                      </i>
+                    </div>
+                  </div>
+
+                  <div class="item multiple-lines">
+                    <div class="item-content has-secondary">
+                      <div>Clínica Heart</div>
+                      <div class="item-label item-smaller addressDetail">Rua Marques de Olinda 2371</div>
+                      <div class="item-label item-smaller addressDetail">Glória</div>
+                      <div class="item-label item-smaller addressDetail">CEP 89570133</div>
+                      <div class="item-label item-smaller addressDetail text-italic">( a 1,2 km )</div>
+                    </div>
+                    <div class="item-secondary">
+                      <i>
+                        place
+                      </i>
+                    </div>
+                  </div>
+
                 </div>
               </quasar-collapsible>
-              <quasar-collapsible icon="shopping_cart" label="Third">
+              <quasar-collapsible icon="credit_card" label="Convênios">
                 <div>
                   Lorem ipsum dolor sit amet...
                 </div>
@@ -72,5 +105,12 @@ export default {
 
 </script>
 
-<style lang="css">
+<style scoped>
+  .addressDetail {
+    font-size: .75em !important;
+  }
+  .labelConvenio {
+    font-size: .75em !important;
+    margin-top: 10px;
+  }
 </style>
