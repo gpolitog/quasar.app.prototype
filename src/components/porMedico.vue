@@ -23,7 +23,7 @@
       </div>
     </div>
 
-      <button @click="sendAllProviders()" class="negative circular shadow-3 absolute-bottom-right" style="right:20px; bottom:25px;"><i>done_all</i></button>
+    <button @click="sendAllProviders()" class="negative circular shadow-3 absolute-bottom-right" style="right:20px; bottom:25px;"><i>done_all</i></button>
 
   </div>
 </template>
