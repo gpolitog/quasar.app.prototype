@@ -22,8 +22,12 @@
 
             <div class="list item-delimiter">
               <quasar-collapsible icon="info_outline" label="Resumo">
-                <div class="text-justify thin-paragraph" style="font-size:.9em; margin-bottom:1em; margin-top:1em;">
-                  Dr. Mauriano Salazar graduou-se em medicina pela UNIPAC, no ano de 1999. Especializou-se em Cardiologia e Terapia Intensiva (CTI) pela Fundação Mario Pena e Hospital Luxemburgo, em Belo Horizonte. Após esse período, trabalhou como Cardiologista em hospitais, Unidades Coronarianas e Centros de Tratamento Intensivo.Nesta ultima década dedicou-se a estudos que abrangeram não somente a área de Cardiologia, mas também a Fisiologia, Neurociências, Psicologia, mudança de comportamento e cardiologia esportiva.
+                <div class="text-justify light-paragraph" style="font-size:.9em; margin-bottom:1em; margin-top:1em;">
+                  Dr. Mauriano Salazar graduou-se em medicina pela UNIPAC, no ano de 1999.
+                  Especializou-se em Cardiologia e Terapia Intensiva (CTI) pela Fundação Mario Pena e Hospital Luxemburgo, em Belo Horizonte.
+                  Após esse período, trabalhou como Cardiologista em hospitais, Unidades Coronarianas e Centros de Tratamento Intensivo.
+                  Nesta ultima década dedicou-se a estudos que abrangeram não somente a área de Cardiologia,
+                  mas também a Fisiologia, Neurociências, Psicologia, mudança de comportamento e cardiologia esportiva.
                 </div>
               </quasar-collapsible>
               <quasar-collapsible icon="add_location" label="Locais de Atend.">
@@ -35,10 +39,10 @@
                       <div class="item-label item-smaller addressDetail">Saguaçú - CEP 89765003</div>
                       <div class="item-label item-smaller addressDetail text-italic">( a 550m )</div>
                       <div class="item-label item-smaller text-italic">
-                        <span class="label bg-green text-white labelConvenio">Unimed</span>
                         <span class="label bg-white text-red labelConvenio agemed">Agemed</span>
                         <span class="label bg-blue-10 text-white labelConvenio">Amil</span>
                         <span class="label bg-red text-white labelConvenio">Bradesco</span>
+                        <span class="label bg-green text-white labelConvenio">Unimed</span>
                       </div>
                     </div>
                     <div class="item-secondary">
@@ -55,9 +59,9 @@
                       <div class="item-label item-smaller addressDetail">CEP 89570133</div>
                       <div class="item-label item-smaller addressDetail text-italic">( a 1,2 km )</div>
                       <div class="item-label item-smaller text-italic">
-                        <span class="label bg-green text-white labelConvenio">Unimed</span>
                         <span class="label bg-white text-red labelConvenio agemed">Agemed</span>
                         <span class="label bg-yellow text-blue-10 labelConvenio">Cassi</span>
+                        <span class="label bg-green text-white labelConvenio">Unimed</span>
                       </div>
                     </div>
                     <div class="item-secondary">
@@ -99,16 +103,30 @@
           </div>
         </div>
       </div>
+
+      <quasar-fab
+         class="absolute-bottom-right"
+         classNames="red shadow-3"
+         active-icon="location_on"
+         icon="date_range"
+         direction="up"
+         style="right: 25px; bottom: 28px;"
+       >
+         <quasar-small-fab class="secondary shadow-3" @click.native="scheduleRequest1(false, chamaLogin)">pin_drop</quasar-small-fab><span class="label-small-fab-1 shadow-3">Clínica Salutare</span>
+         <quasar-small-fab class="secondary shadow-3" @click.native="scheduleRequest2(false, chamaLogin)">pin_drop</quasar-small-fab><span class="label-small-fab-2 shadow-3">Clínica Heart</span>
+       </quasar-fab>
+
+
     </div>
 
-    <button @click="scheduleRequest(false)" class="negative circular shadow-3 absolute-bottom-right" style="right:20px; bottom:25px;"><i>today</i></button>
+    <!-- <button @click="scheduleRequest(false)" class="negative circular shadow-3 absolute-bottom-right" style="right:20px; bottom:25px;"><i>today</i></button> -->
 
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
-import { ActionSheet, Toast } from 'quasar'
+import { ActionSheet } from 'quasar'
 
 export default {
   mounted () {
@@ -118,81 +136,99 @@ export default {
     ...mapActions([
       'setHeaderTitle'
     ]),
-    scheduleRequest (gallery) {
+    chamaLogin () {
+      this.$router.push({ name: 'login' })
+    },
+    scheduleRequest2 (gallery, callback) {
       ActionSheet.create({
-        title: 'Solicitar Agenda',
+        title: 'Selecione o convênio',
         gallery: gallery,
         actions: [
           {
-            label: 'Delete',
-            icon: 'delete',
+            label: 'Particular',
+            icon: 'monetization_on',
             handler () {
-              Toast.create('Deleted Article')
+              callback()
             }
           },
           {
-            label: 'Share',
-            icon: 'share',
+            label: 'Agemed',
+            icon: 'credit_card',
             handler () {
-              Toast.create('Shared!')
+              callback()
             }
           },
           {
-            label: 'Play',
-            icon: 'gamepad',
+            label: 'Amil',
+            icon: 'credit_card',
             handler () {
-              Toast.create('Launched Game')
+              callback()
             }
           },
           {
-            label: 'Favorite',
-            icon: 'favorite',
+            label: 'Bradesco',
+            icon: 'credit_card',
             handler () {
-              Toast.create('Added to favorites')
+              callback()
             }
           },
           {
-            label: 'Favorite',
-            icon: 'favorite',
+            label: 'Unimed',
+            icon: 'credit_card',
             handler () {
-              Toast.create('Added to favorites')
-            }
-          },
-          {
-            label: 'Favorite',
-            icon: 'favorite',
-            handler () {
-              Toast.create('Added to favorites')
-            }
-          },
-          {
-            label: 'Favorite',
-            icon: 'favorite',
-            handler () {
-              Toast.create('Added to favorites')
-            }
-          },
-          {
-            label: 'Favorite',
-            icon: 'favorite',
-            handler () {
-              Toast.create('Added to favorites')
-            }
-          },
-          {
-            label: 'Favorite',
-            icon: '',
-            handler () {
-              Toast.create('Added to favorites')
+              callback()
             }
           }
         ],
         dismiss: {
-          label: 'Cancel',
+          label: 'Cancelar',
           icon: 'cancel',
           classes: 'text-primary',
           handler () {
-            Toast.create('Cancelled...')
+            callback()
+          }
+        }
+      })
+    },
+    scheduleRequest1 (gallery, callback) {
+      ActionSheet.create({
+        title: 'Selecione o convênio',
+        gallery: gallery,
+        actions: [
+          {
+            label: 'Particular',
+            icon: 'monetization_on',
+            handler () {
+              callback()
+            }
+          },
+          {
+            label: 'Agemed',
+            icon: 'credit_card',
+            handler () {
+              callback()
+            }
+          },
+          {
+            label: 'Cassi',
+            icon: 'credit_card',
+            handler () {
+              callback()
+            }
+          },
+          {
+            label: 'Unimed',
+            icon: 'credit_card',
+            handler () {
+              callback()
+            }
+          }
+        ],
+        dismiss: {
+          label: 'Cancelar',
+          icon: 'cancel',
+          classes: 'text-primary',
+          handler () {
           }
         }
       })
@@ -214,10 +250,11 @@ export default {
   .labelConvenio {
     font-size: .95em !important;
     margin-top: 6px;
+    margin-right: 2px;
   }
   .agemed {
     border: 1px solid red;
-    height: 1.75em;
+    height: 1.67em;
   }
   .area-atuacao-main {
     margin-top: 1em;
@@ -230,6 +267,30 @@ export default {
   }
   .area-atuacao-icon {
     margin-right: 5px;
+  }
+  .label-small-fab-1 {
+    font-size: .89em;
+    text-align: center;
+    background-color: #26a69a;
+    color: white;
+    position: absolute;
+    top: 8px;
+    left: -130px;
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .label-small-fab-2 {
+    font-size: .89em;
+    text-align: center;
+    background-color: #26a69a;
+    color: white;
+    position:absolute;
+    top: 56px;
+    left: -114px;
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
 </style>

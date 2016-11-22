@@ -6,7 +6,7 @@
     <div class="layout-padding">
       <div class="list item-delimiter">
         <router-link to="/detalhesMedico" tag="div" class="item three-lines" v-for="(medico, index) in listaComFiltro">
-          <img class="item-primary" :src="getAvatarURL(medico.id)">
+          <img class="item-primary" :src="'' + medico.avatar + ''">
           <div class="item-content has-secondary">
             <div>{{ medico.nome }}</div>
             <div>
@@ -41,11 +41,9 @@ export default {
       infiniteScrollOn: true,
       search: '',
       listaMedicos: [
-        { id: 1, nome: 'Mauriano Salazar', especializacao: 'Cardiologia', crm: 5765, dist: '550 m' },
-        { id: 2, nome: 'Paula Guimarães', especializacao: 'Cardiologia', crm: 21308, dist: '970 m' },
-        { id: 3, nome: 'Sérgio Silva Souza', especializacao: 'Cardiologia', crm: 98123, dist: '1,1 km' }
-        // { id: 4, nome: 'Felipe Schirmandt', especializacao: 'Cardiologia', crm: 66545, dist: '1,2 km' },
-        // { id: 5, nome: 'Lizandra Hermann', especializacao: 'Cardiologia', crm: 97878, dist: '1,3 km' }
+        { id: 1, nome: 'Mauriano Salazar', especializacao: 'Cardiologia', crm: 5765, dist: '550 m', avatar: 'statics/img/avatars/1.jpg' },
+        { id: 2, nome: 'Paula Guimarães', especializacao: 'Cardiologia', crm: 21308, dist: '970 m', avatar: 'statics/img/avatars/2.jpg' },
+        { id: 3, nome: 'Sérgio Silva Souza', especializacao: 'Cardiologia', crm: 98123, dist: '1,1 km', avatar: 'statics/img/avatars/3.jpg' }
       ]
     }
   },
@@ -53,9 +51,6 @@ export default {
     ...mapActions([
       'setHeaderTitle'
     ]),
-    getAvatarURL (id) {
-      return '../statics/img/avatars/' + id + '.jpg'
-    },
     sendAllProviders () {
       Dialog.create({
         title: 'Solicitar Agenda',
@@ -87,3 +82,6 @@ export default {
   }
 }
 </script>
+
+<style>
+</style>

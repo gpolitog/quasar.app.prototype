@@ -38,6 +38,8 @@ export default new VueRouter({
     { name: 'porMedico', path: '/porMedico', component: load('porMedico') }, // Default
     { name: 'porEspecialidade', path: '/porEspecialidade', component: load('porEspecialidade') }, // Default
     { name: 'detalhesMedico', path: '/detalhesMedico', component: load('detalhesMedico') }, // Default
+    { name: 'login', path: '/login', component: load('login') }, // Default
+    { name: 'criarNovoUsuario', path: '/criarNovoUsuario', component: load('criarNovoUsuario') }, // Default
     { path: '*', component: load('error404') } // Not found
   ]
 })

@@ -2,7 +2,7 @@
     <div class="layout-padding">
       <dm-button color="primary" icon="account_circle" to="porMedico">POR MÉDICO</dm-button>
       <dm-button color="positive" icon="work" to="porEspecialidade">POR ESPECIALIDADE</dm-button>
-      <img src="../statics/img/docmob.svg" alt="" />
+      <img src="statics/img/docmob.svg" alt="" />
     </div>
 </template>
 

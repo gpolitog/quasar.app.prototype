@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="full-width">
     <router-link :to="{ name: to }">
-      <button :class="color + ' row items-stretch'" :style="'width: 100%; margin-bottom: ' + marginBottom + ';'">
+      <button :class="color + ' row items-stretch shadow-2'" :style="'width: 100%; margin-bottom: ' + marginBottom + ';'">
         <div>
           <i>{{ icon }}</i>
         </div>
@@ -23,12 +23,15 @@ export default {
       default: 'primary'
     },
     marginBottom: {
-      default: '5px'
+      default: '10px'
     },
     to: String
   }
 }
 </script>
 
-<style lang="css">
+<style scoped>
+  .no-shadow {
+    text-shadow: none;
+  }
 </style>

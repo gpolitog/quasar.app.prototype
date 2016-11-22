@@ -6,16 +6,18 @@
       <div slot="header" class="toolbar primary">
         <!-- <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()"> -->
         <button @click="backHistory()" v-if="showBackHistory()">
-            <i>arrow_back</i>
+            <i class="botaoVoltar">arrow_back</i>
           </button>
         <button @click="$refs.leftDrawer.open()">
-          <i>menu</i>
+          <i class="botaoMenuHamburguer">menu</i>
         </button>
         <quasar-toolbar-title :padding="1">
-          {{ general.headerTitle }}
+          <div class="titulo">
+            {{ general.headerTitle }}
+          </div>
         </quasar-toolbar-title>
         <button @click="$refs.rightDrawer.open()">
-          <i>person</i>
+          <i class="botaoMenuPerfil">person</i>
         </button>
       </div>
 
@@ -27,7 +29,7 @@
         </div>
 
         <div class="list no-border platform-delimiter">
-          <quasar-drawer-link icon="search" to="/agendarConsulta" exact>
+          <quasar-drawer-link icon="search" to="/agendarConsulta">
             Agendar consulta
           </quasar-drawer-link>
           <hr>
@@ -86,7 +88,6 @@ import { mapState, mapActions } from 'vuex'
 export default {
   mounted () {
     this.setHeaderTitle('Agendar Consulta')
-    console.log('mounted do app')
   },
   methods: {
     ...mapActions([
@@ -117,4 +118,23 @@ export default {
 </script>
 
 <style>
+ .titulo {
+   margin-top: .9em !important;
+ }
+ .botaoVoltar {
+   font-size: 1.9em !important;
+   margin-top: .8em;
+ }
+ .botaoMenuHamburguer {
+   font-size: 1.9em !important;
+   margin-top: .8em;
+ }
+ .botaoMenuPerfil {
+   font-size: 1.9em !important;
+   margin-top: .8em;
+ }
+ button {
+   text-shadow: none !important;
+ }
+
 </style>
