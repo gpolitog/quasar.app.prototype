@@ -25,6 +25,11 @@
               <input type="password" required class="full-width">
               <label>* Informe seu telefone</label>
             </div>
+            
+            <label>
+              <quasar-toggle v-model="pessoa.sexo" class="pink"></quasar-toggle>
+              {{ pessoa.sexo ? ' Sexo feminino' : ' Sexo masculino' }}
+            </label>
 
           </quasar-step>
 
@@ -61,11 +66,11 @@
           <quasar-step title="Confirme o SMS" :ready="checked">
 
             <div class="floating-label custom">
-              <input  readonly class="full-width">
-              <label>Informe o código recebido</label>
+              <input type="number" required class="full-width">
+              <label>* Informe o código recebido</label>
             </div>
 
-            <button class="tertiary" style="margin-top:.8em;">reenviar código sms</button>
+            <button @click="resentSMS()" class="tertiary" style="margin-top:.8em;">reenviar código sms</button>
 
             <div style="padding-top: 1.7em; padding-bottom:.7em;">
               <label>
@@ -73,33 +78,9 @@
                 Eu aceito os <span style="color:blue; text-decoration:underline;">termos</span>.
               </label>
             </div>
-
           </quasar-step>
         </quasar-stepper>
       </quasar-transition>
-
-      <div v-show="finished" class="items-center column justify-center full-width full-height">
-        <p class="caption">
-          <i class="text-primary" style="font-size: 2rem; margin-right: 1rem;">check</i>
-          <span>Finished. Well done!</span>
-        </p>
-        <button class="primary" @click="reset()">Reset</button>
-      </p>
-    </div>
-
-      <!-- <div class="floating-label custom">
-        <input required class="full-width">
-        <label>Informe seu e-mail ou telefone</label>
-      </div>
-      <div class="floating-label custom" style="margin-bottom:2em;">
-        <input type="password" required class="full-width">
-        <label>Informe sua senha</label>
-      </div>
-      <dm-button color="primary" icon="input" to="porMedico">Entrar</dm-button>
-      <dm-button color="info" icon="thumb_up" to="agendarConsulta">Entrar com o facebook</dm-button>
-      <dm-button color="positive" icon="lock_open" to="criarNovoUsuario">Criar novo usuário</dm-button>
-      <dm-button color="negative" icon="person_add" to="recuperarSenha">Recuperar senha</dm-button> -->
-
     </div>
   </div>
 </template>
@@ -107,6 +88,7 @@
 <script>
 import { mapActions } from 'vuex'
 import DmButton from './buttonFullWidth.vue'
+import { Toast } from 'quasar'
 
 export default {
   data () {
@@ -114,7 +96,10 @@ export default {
       dataNascimento: '2016-09-18T10:45:00.000Z',
       ready: false,
       finished: false,
-      checked: false
+      checked: false,
+      pessoa: {
+        sexo: true
+      }
     }
   },
   mounted () {
@@ -125,12 +110,14 @@ export default {
       'setHeaderTitle'
     ]),
     finish () {
-      this.finished = true
-      console.log('finalizando...')
+      this.$router.push({ name: 'preferenciasHorarios' })
     },
     reset () {
       this.$refs.stepper.reset()
       this.finished = false
+    },
+    resentSMS () {
+      Toast.create.info('Código SMS reenviado com sucesso!')
     }
   },
   components: {

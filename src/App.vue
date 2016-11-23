@@ -6,18 +6,24 @@
       <div slot="header" class="toolbar primary">
         <!-- <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()"> -->
         <button @click="backHistory()" v-if="showBackHistory()">
-            <i class="botaoVoltar">arrow_back</i>
+          <i class="botaoVoltarIOS ios-only">arrow_back</i>
+          <i class="mat-only">arrow_back</i>
           </button>
         <button @click="$refs.leftDrawer.open()">
-          <i class="botaoMenuHamburguer">menu</i>
+          <i class="botaoMenuHamburguerIOS ios-only">menu</i>
+          <i class="mat-only">menu</i>
         </button>
         <quasar-toolbar-title :padding="1">
-          <div class="titulo">
+          <div class="tituloIOS ios-only">
+            {{ general.headerTitle }}
+          </div>
+          <div class="mat-only">
             {{ general.headerTitle }}
           </div>
         </quasar-toolbar-title>
         <button @click="$refs.rightDrawer.open()">
-          <i class="botaoMenuPerfil">person</i>
+          <i class="botaoMenuPerfilIOS ios-only">person</i>
+          <i class="mat-only">person</i>
         </button>
       </div>
 
@@ -33,15 +39,26 @@
             Agendar consulta
           </quasar-drawer-link>
           <hr>
-          <div class="list-label">Layout Components</div>
-          <quasar-drawer-link icon="build" to="/showcase/layout/toolbar" exact>
-            Toolbar
+          <div class="list-label">Opções</div>
+          <quasar-drawer-link icon="input" to="/login" exact>
+            Entrar
           </quasar-drawer-link>
-          <quasar-drawer-link icon="tab" to="/showcase/layout/tabs" exact>
-            Tabs
+          <quasar-drawer-link icon="check_box" to="/meusAgendamentos" exact>
+            Meus Agendamentos
           </quasar-drawer-link>
-          <quasar-drawer-link icon="compare_arrows" to="/showcase/layout/drawer" exact>
-            Layout Drawer
+          <quasar-drawer-link icon="person" to="/meuPerfil" exact>
+            Meu Perfil
+          </quasar-drawer-link>
+          <quasar-drawer-link icon="mail" to="/contato" exact>
+            Contato
+          </quasar-drawer-link>
+          <hr>
+          <quasar-drawer-link icon="format_align_justify" to="/prescricoes" exact>
+            Prescrições
+          </quasar-drawer-link>
+          <hr>
+          <quasar-drawer-link icon="info" to="/sobre" exact>
+            Sobre o DocMob
           </quasar-drawer-link>
         </div>
       </quasar-drawer>
@@ -52,16 +69,58 @@
       <quasar-drawer right-side swipe-only ref="rightDrawer">
         <div class="toolbar light">
           <quasar-toolbar-title :padding="1">
-              Right-side Drawer
+              Dados do perfil
           </quasar-toolbar-title>
         </div>
 
         <p style="padding: 25px;" class="text-grey-7">
-          This is yet another Drawer that does not gets displayed alongside content on
-          bigger screens.
+          Aqui entram informacoes principais do perfil, historico de notificacoes. Uma area importante de facil acesso.
         </p>
       </quasar-drawer>
 
+      <div slot="footer" class="" v-if="route.name !== undefined && route.name.indexOf('meusAgendamentos') > -1">
+
+          <quasar-tabs slot="navigation" class="blue">
+            <quasar-tab
+              icon="watch_later"
+              route="/meusAgendamentos"
+              exact>
+            </quasar-tab>
+            <quasar-tab
+              icon="check_circle"
+              route="/MeusAgendamentosConfirmados"
+              exact>
+            </quasar-tab>
+            <quasar-tab
+              icon="exit_to_app"
+              route="/MeusAgendamentosEncerrados"
+              exact>
+            </quasar-tab>
+            <quasar-tab
+              icon="cancel"
+              route="/MeusAgendamentosCancelados"
+              exact>
+            </quasar-tab>
+          </quasar-tabs>
+
+      </div>
+
+      <div slot="footer" class="" v-if="route.name !== undefined && route.name.indexOf('meuPerfil') > -1">
+
+          <quasar-tabs slot="navigation" class="blue">
+            <quasar-tab
+              icon="person"
+              route="/meuPerfil"
+              exact>
+            </quasar-tab>
+            <quasar-tab
+              icon="people"
+              route="/meuPerfilVidas"
+              exact>
+            </quasar-tab>
+          </quasar-tabs>
+
+      </div>
 
     </quasar-layout>
 
@@ -94,7 +153,7 @@ export default {
       'setHeaderTitle'
     ]),
     showBackHistory () {
-      if ([ 'porMedico', 'porEspecialidade', 'detalhesMedico' ].indexOf(this.route.name) > -1) {
+      if ([ 'porMedico', 'porEspecialidade', 'detalhesMedico', 'criarNovoUsuario', 'preferenciasHorarios' ].indexOf(this.route.name) > -1) {
         return true
       }
       return false
@@ -118,18 +177,33 @@ export default {
 </script>
 
 <style>
- .titulo {
-   margin-top: .9em !important;
- }
- .botaoVoltar {
+  .tituloIOS {
+    margin-top: .9em !important;
+  }
+  .tituloMAT {
+    margin-top: .9em !important;
+  }
+ .botaoVoltarIOS {
    font-size: 1.9em !important;
    margin-top: .8em;
  }
- .botaoMenuHamburguer {
+ .botaoVoltarMAT {
    font-size: 1.9em !important;
    margin-top: .8em;
  }
- .botaoMenuPerfil {
+ .botaoMenuHamburguerIOS {
+   font-size: 1.9em !important;
+   margin-top: .8em;
+ }
+ .botaoMenuHamburguerMAT {
+   font-size: 1.9em !important;
+   margin-top: .8em;
+ }
+ .botaoMenuPerfilIOS {
+   font-size: 1.9em !important;
+   margin-top: .8em;
+ }
+ .botaoMenuPerfilMAT {
    font-size: 1.9em !important;
    margin-top: .8em;
  }

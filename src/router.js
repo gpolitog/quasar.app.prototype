@@ -33,13 +33,22 @@ export default new VueRouter({
 
   routes: [
     { path: '/', component: load('agendarConsulta') }, // Default
-    { name: 'teste', path: '/teste', component: load('teste') }, // Default
+    { name: 'prescricoes', path: '/prescricoes', component: load('prescricoes') }, // Default
+    { name: 'contato', path: '/contato', component: load('contato') }, // Default
+    { name: 'sobre', path: '/sobre', component: load('sobre') }, // Default
+    { name: 'meuPerfil', path: '/meuPerfil', component: load('meuPerfil') }, // Default
+    { name: 'meuPerfilVidas', path: '/meuPerfilVidas', component: load('meuPerfilVidas') }, // Default
     { name: 'agendarConsulta', path: '/agendarConsulta', component: load('agendarConsulta') }, // Default
     { name: 'porMedico', path: '/porMedico', component: load('porMedico') }, // Default
     { name: 'porEspecialidade', path: '/porEspecialidade', component: load('porEspecialidade') }, // Default
     { name: 'detalhesMedico', path: '/detalhesMedico', component: load('detalhesMedico') }, // Default
     { name: 'login', path: '/login', component: load('login') }, // Default
     { name: 'criarNovoUsuario', path: '/criarNovoUsuario', component: load('criarNovoUsuario') }, // Default
+    { name: 'preferenciasHorarios', path: '/preferenciasHorarios', component: load('preferenciasHorarios') }, // Default
+    { name: 'meusAgendamentos', path: '/meusAgendamentos', component: load('meusAgendamentos') }, // Default
+    { name: 'meusAgendamentosConfirmados', path: '/meusAgendamentosConfirmados', component: load('meusAgendamentosConfirmados') }, // Default
+    { name: 'meusAgendamentosEncerrados', path: '/meusAgendamentosEncerrados', component: load('meusAgendamentosEncerrados') }, // Default
+    { name: 'meusAgendamentosCancelados', path: '/meusAgendamentosCancelados', component: load('meusAgendamentosCancelados') }, // Default
     { path: '*', component: load('error404') } // Not found
   ]
 })
