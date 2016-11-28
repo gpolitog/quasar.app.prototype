@@ -3,9 +3,9 @@
   <div>
     <div class="layout-padding" style="margin:1em;">
 
-      <quasar-transition name="slide">
-        <quasar-stepper @finish="finish()" ref="stepper" v-show="!finished">
-          <quasar-step title="Seus dados">
+      <q-transition name="slide">
+        <q-stepper @finish="finish()" ref="stepper" v-show="!finished">
+          <q-step title="Seus dados">
 
             <button class="info small" style="margin-bottom:1.3em;">Usar Facebook</button>
 
@@ -25,15 +25,15 @@
               <input type="password" required class="full-width">
               <label>* Informe seu telefone</label>
             </div>
-            
+
             <label>
-              <quasar-toggle v-model="pessoa.sexo" class="pink"></quasar-toggle>
+              <q-toggle v-model="pessoa.sexo" class="pink"></q-toggle>
               {{ pessoa.sexo ? ' Sexo feminino' : ' Sexo masculino' }}
             </label>
 
-          </quasar-step>
+          </q-step>
 
-          <quasar-step title="Dados no convênio" :ready="true">
+          <q-step title="Dados no convênio" :ready="true">
             <div class="stacked-label custom">
               <input  readonly class="full-width" value="UNIMED">
               <label>Convênio</label>
@@ -45,7 +45,7 @@
             <div class="row">
               <div class="">
                 <div class="stacked-label custom">
-                  <quasar-datetime v-model="dataNascimento" type="date" style="margin-top:16px;"></quasar-datetime>
+                  <q-datetime v-model="dataNascimento" type="date" style="margin-top:16px;"></q-datetime>
                   <label>* Dt. Nasc.</label>
                 </div>
               </div>
@@ -61,9 +61,9 @@
               <label>Nome da mãe</label>
             </div>
 
-          </quasar-step>
+          </q-step>
 
-          <quasar-step title="Confirme o SMS" :ready="checked">
+          <q-step title="Confirme o SMS" :ready="checked">
 
             <div class="floating-label custom">
               <input type="number" required class="full-width">
@@ -74,13 +74,13 @@
 
             <div style="padding-top: 1.7em; padding-bottom:.7em;">
               <label>
-                <quasar-toggle v-model="checked" class="orange"></quasar-toggle>
+                <q-toggle v-model="checked" class="orange"></q-toggle>
                 Eu aceito os <span style="color:blue; text-decoration:underline;">termos</span>.
               </label>
             </div>
-          </quasar-step>
-        </quasar-stepper>
-      </quasar-transition>
+          </q-step>
+        </q-stepper>
+      </q-transition>
     </div>
   </div>
 </template>

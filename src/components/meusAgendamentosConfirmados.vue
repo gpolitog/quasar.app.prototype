@@ -20,7 +20,7 @@
         </div>
         <div class="card-content">
           <div class="list item-delimiter">
-            <quasar-collapsible icon="info_outline" label="Info. Agenda">
+            <q-collapsible icon="info_outline" label="Info. Agenda">
               <div class="text-justify" style="font-size:.9em; margin-bottom:1em; margin-top:1em;">
 
                 <div class="row linhaDetalhesLabel">
@@ -52,8 +52,8 @@
                 </div>
 
               </div>
-            </quasar-collapsible>
-            <quasar-collapsible icon="add_location" label="Local">
+            </q-collapsible>
+            <q-collapsible icon="add_location" label="Local">
               <div class="item multiple-lines">
                 <div class="item-content has-secondary">
                   <div>Clínica Heart</div>
@@ -71,12 +71,12 @@
                   </i>
                 </div>
               </div>
-            </quasar-collapsible>
-            <quasar-collapsible icon="assignment_turned_in" label="Ações">
+            </q-collapsible>
+            <q-collapsible icon="assignment_turned_in" label="Ações">
               <div class="auto text-primary">
                 <button @click="cancelar()" class="negative "><i class="on-left">error</i> Solicitar cancelamento</button>
               </div>
-            </quasar-collapsible>
+            </q-collapsible>
           </div>
         </div>
         <div class="card-actions">

@@ -21,7 +21,7 @@
 
 
             <div class="list item-delimiter">
-              <quasar-collapsible icon="info_outline" label="Resumo">
+              <q-collapsible icon="info_outline" label="Resumo">
                 <div class="text-justify light-paragraph" style="font-size:.9em; margin-bottom:1em; margin-top:1em;">
                   Dr. Mauriano Salazar graduou-se em medicina pela UNIPAC, no ano de 1999.
                   Especializou-se em Cardiologia e Terapia Intensiva (CTI) pela Fundação Mario Pena e Hospital Luxemburgo, em Belo Horizonte.
@@ -29,8 +29,8 @@
                   Nesta ultima década dedicou-se a estudos que abrangeram não somente a área de Cardiologia,
                   mas também a Fisiologia, Neurociências, Psicologia, mudança de comportamento e cardiologia esportiva.
                 </div>
-              </quasar-collapsible>
-              <quasar-collapsible icon="add_location" label="Locais de Atend.">
+              </q-collapsible>
+              <q-collapsible icon="add_location" label="Locais de Atend.">
                 <div class="locais-main">
                   <div class="item multiple-lines">
                     <div class="item-content has-secondary local">
@@ -71,8 +71,8 @@
                     </div>
                   </div>
                 </div>
-              </quasar-collapsible>
-              <quasar-collapsible icon="assignment_turned_in" label="Áreas de atuação">
+              </q-collapsible>
+              <q-collapsible icon="assignment_turned_in" label="Áreas de atuação">
                 <div class="area-atuacao-main">
                   <div class="row area-atuacao">
                     <i class="area-atuacao-icon">check</i> Cardiopatia Congênita do Adulto
@@ -90,7 +90,7 @@
                     <i class="area-atuacao-icon">check</i> Cardiologia Pediátrica
                   </div>
                 </div>
-              </quasar-collapsible>
+              </q-collapsible>
             </div>
 
         </div>
@@ -104,7 +104,7 @@
         </div>
       </div>
 
-      <quasar-fab
+      <q-fab
          class="absolute-bottom-right"
          classNames="red shadow-3"
          active-icon="location_on"
@@ -112,9 +112,9 @@
          direction="up"
          style="right: 25px; bottom: 28px;"
        >
-         <quasar-small-fab class="secondary shadow-3" @click.native="scheduleRequest1(false, chamaLogin)">pin_drop</quasar-small-fab><span class="label-small-fab-1 shadow-3">Clínica Salutare</span>
-         <quasar-small-fab class="secondary shadow-3" @click.native="scheduleRequest2(false, chamaLogin)">pin_drop</quasar-small-fab><span class="label-small-fab-2 shadow-3">Clínica Heart</span>
-       </quasar-fab>
+         <q-small-fab class="secondary shadow-3" @click.native="scheduleRequest1(false, chamaLogin)">pin_drop</q-small-fab><span class="label-small-fab-1 shadow-3">Clínica Salutare</span>
+         <q-small-fab class="secondary shadow-3" @click.native="scheduleRequest2(false, chamaLogin)">pin_drop</q-small-fab><span class="label-small-fab-2 shadow-3">Clínica Heart</span>
+       </q-fab>
 
 
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div slot="header" class="toolbar primary">
-      <quasar-search v-model="search" class="primary"></quasar-search>
+      <q-search v-model="search" class="primary"></q-search>
     </div>
     <div class="layout-padding">
       <div class="list item-delimiter">

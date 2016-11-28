@@ -9,22 +9,20 @@
           Você pode adicionar mais de uma preferência, combinando assim diferentes dias da semana e períodos.
         </small>
       </blockquote>
+      <div class="">
+        <q-dialog-select label="Dia da semana" type="checkbox" v-model="diasSelecionados" ok-label="selecionar" cancel-label="sair" :options="diasDaSemana"></q-select>
+      </div>
       <div class="row">
-        <div class="" style="margin-right:10px;">
-          <quasar-select placeholder="Dia da semana" type="checkbox" v-model="diasSelecionados" :options="diasDaSemana"></quasar-select>
-        </div>
-        <div class="" style="margin-right:10px;">
-          <quasar-select placeholder="Período do dia" type="checkbox" v-model="periodosSelecionados" :options="periodos"></quasar-select>
-        </div>
-        <div class="">
-          <button class="primary small shadow-2" @click="adicionaPreferencia()">
-            <i>check_circle</i>
-          </button>
-        </div>
+        <q-dialog-select label="Período do dia" type="checkbox" v-model="periodosSelecionados" ok-label="selecionar" cancel-label="sair" :options="periodos"></q-select>
+      </div>
+      <div class="" style="margin-top:10px;">
+        <button class="primary small shadow-2" @click="adicionaPreferencia()">
+          <i class="on-left">check_circle</i>Adicionar
+        </button>
       </div>
 
       <div class="">
-        <table :class="'compact striped'" class="quasar-table" style="margin-top:20px; max-width: 30% important!;">
+        <table :class="'striped-even'" class="quasar-table" style="margin-top:20px; max-width: 30% important!;">
           <!-- <thead>
             <tr>
               <th class="text-left">Name</th>
@@ -58,7 +56,7 @@
         periodos selecionados: {{ periodosSelecionados }} <br>
         periodos: {{ preferencias }} -->
 
-        <quasar-fab
+        <q-fab
            class="absolute-bottom-right"
            classNames="red shadow-3"
            active-icon="done"
@@ -67,8 +65,8 @@
            direction="up"
            style="right: 25px; bottom: 28px;"
          >
-           <quasar-small-fab class="secondary shadow-3" @click.native="enviaSolicitacao(acessarMeusAgendamentos)">done</quasar-small-fab><span class="label-small-fab-1 shadow-3">Enviar solicitação</span>
-         </quasar-fab>
+           <q-small-fab class="secondary shadow-3" @click.native="enviaSolicitacao(acessarMeusAgendamentos)">done</q-small-fab><span class="label-small-fab-1 shadow-3">Enviar solicitação</span>
+         </q-fab>
 
       </div>
 

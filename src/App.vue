@@ -1,8 +1,7 @@
 <template>
   <!-- Don't drop "quasar-app" class -->
   <div id="quasar-app">
-
-    <quasar-layout>
+    <q-layout>
       <div slot="header" class="toolbar primary">
         <!-- <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()"> -->
         <button @click="backHistory()" v-if="showBackHistory()">
@@ -13,116 +12,116 @@
           <i class="botaoMenuHamburguerIOS ios-only">menu</i>
           <i class="mat-only">menu</i>
         </button>
-        <quasar-toolbar-title :padding="1">
+        <q-toolbar-title :padding="1">
           <div class="tituloIOS ios-only">
             {{ general.headerTitle }}
           </div>
           <div class="mat-only">
             {{ general.headerTitle }}
           </div>
-        </quasar-toolbar-title>
+        </q-toolbar-title>
         <button @click="$refs.rightDrawer.open()">
           <i class="botaoMenuPerfilIOS ios-only">person</i>
           <i class="mat-only">person</i>
         </button>
       </div>
 
-      <quasar-drawer ref="leftDrawer" swipe-only>
+      <q-drawer ref="leftDrawer" swipe-only>
         <div class="toolbar primary">
-          <quasar-toolbar-title :padding="1">
+          <q-toolbar-title :padding="1">
               DocMob
-          </quasar-toolbar-title>
+          </q-toolbar-title>
         </div>
 
         <div class="list no-border platform-delimiter">
-          <quasar-drawer-link icon="search" to="/agendarConsulta">
+          <q-drawer-link icon="search" :to="{ path: '/agendarConsulta', exact: true }">
             Agendar consulta
-          </quasar-drawer-link>
+          </q-drawer-link>
           <hr>
           <div class="list-label">Opções</div>
-          <quasar-drawer-link icon="input" to="/login" exact>
+          <q-drawer-link icon="input" :to="{ path: '/login', exact: true }">
             Entrar
-          </quasar-drawer-link>
-          <quasar-drawer-link icon="check_box" to="/meusAgendamentos" exact>
+          </q-drawer-link>
+          <q-drawer-link icon="check_box" :to="{ path: '/meusAgendamentos', exact: true }">
             Meus Agendamentos
-          </quasar-drawer-link>
-          <quasar-drawer-link icon="person" to="/meuPerfil" exact>
+          </q-drawer-link>
+          <q-drawer-link icon="person" :to="{ path: '/meuPerfil', exact: true }">
             Meu Perfil
-          </quasar-drawer-link>
-          <quasar-drawer-link icon="mail" to="/contato" exact>
+          </q-drawer-link>
+          <q-drawer-link icon="mail" :to="{ path: '/contato', exact: true }">
             Contato
-          </quasar-drawer-link>
+          </q-drawer-link>
           <hr>
-          <quasar-drawer-link icon="format_align_justify" to="/prescricoes" exact>
+          <q-drawer-link icon="format_align_justify" :to="{ path: '/prescricoes', exact: true }">
             Prescrições
-          </quasar-drawer-link>
+          </q-drawer-link>
           <hr>
-          <quasar-drawer-link icon="info" to="/sobre" exact>
+          <q-drawer-link icon="info" :to="{ path: '/sobre', exact: true }">
             Sobre o DocMob
-          </quasar-drawer-link>
+          </q-drawer-link>
         </div>
-      </quasar-drawer>
+      </q-drawer>
 
       <router-view class="layout-view"></router-view>
 
 
-      <quasar-drawer right-side swipe-only ref="rightDrawer">
+      <q-drawer right-side swipe-only ref="rightDrawer">
         <div class="toolbar light">
-          <quasar-toolbar-title :padding="1">
+          <q-toolbar-title :padding="1">
               Dados do perfil
-          </quasar-toolbar-title>
+          </q-toolbar-title>
         </div>
 
         <p style="padding: 25px;" class="text-grey-7">
           Aqui entram informacoes principais do perfil, historico de notificacoes. Uma area importante de facil acesso.
         </p>
-      </quasar-drawer>
+      </q-drawer>
 
       <div slot="footer" class="" v-if="route.name !== undefined && route.name.indexOf('meusAgendamentos') > -1">
 
-          <quasar-tabs slot="navigation" class="blue">
-            <quasar-tab
+          <q-tabs slot="navigation" class="blue">
+            <q-tab
               icon="watch_later"
               route="/meusAgendamentos"
               exact>
-            </quasar-tab>
-            <quasar-tab
+            </q-tab>
+            <q-tab
               icon="check_circle"
               route="/MeusAgendamentosConfirmados"
               exact>
-            </quasar-tab>
-            <quasar-tab
+            </q-tab>
+            <q-tab
               icon="exit_to_app"
               route="/MeusAgendamentosEncerrados"
               exact>
-            </quasar-tab>
-            <quasar-tab
+            </q-tab>
+            <q-tab
               icon="cancel"
               route="/MeusAgendamentosCancelados"
               exact>
-            </quasar-tab>
-          </quasar-tabs>
+            </q-tab>
+          </q-tabs>
 
       </div>
 
       <div slot="footer" class="" v-if="route.name !== undefined && route.name.indexOf('meuPerfil') > -1">
 
-          <quasar-tabs slot="navigation" class="blue">
-            <quasar-tab
+          <q-tabs slot="navigation" class="blue">
+            <q-tab
               icon="person"
               route="/meuPerfil"
               exact>
-            </quasar-tab>
-            <quasar-tab
+            </q-tab>
+            <q-tab
               icon="people"
               route="/meuPerfilVidas"
               exact>
-            </quasar-tab>
-          </quasar-tabs>
+            </q-tab>
+          </q-tabs>
 
       </div>
 
-    </quasar-layout>
+    </q-layout>
 
   </div>
 

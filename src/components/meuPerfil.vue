@@ -32,7 +32,7 @@
         </div>
         <div>
           <label>
-            <quasar-toggle v-model="pessoa.sexo" class="pink"></quasar-toggle>
+            <q-toggle v-model="pessoa.sexo" class="pink"></q-toggle>
             {{ pessoa.sexo ? ' Sexo feminino' : ' Sexo masculino' }}
           </label>
         </div>

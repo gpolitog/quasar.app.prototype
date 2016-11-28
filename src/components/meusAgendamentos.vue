@@ -20,7 +20,7 @@
         </div>
         <div class="card-content">
             <div class="list item-delimiter">
-              <quasar-collapsible icon="info_outline" label="Info. Agenda">
+              <q-collapsible icon="info_outline" label="Info. Agenda">
                 <div class="text-justify" style="font-size:.9em; margin-bottom:1em; margin-top:1em;">
 
                   <div class="row linhaDetalhesLabel">
@@ -46,8 +46,8 @@
 
 
                 </div>
-              </quasar-collapsible>
-              <quasar-collapsible icon="add_location" label="Local">
+              </q-collapsible>
+              <q-collapsible icon="add_location" label="Local">
                 <div class="locais-main">
                   <div class="item multiple-lines">
                     <div class="item-content has-secondary local">
@@ -67,7 +67,7 @@
                     </div>
                   </div>
                 </div>
-              </quasar-collapsible>
+              </q-collapsible>
             </div>
 
         </div>

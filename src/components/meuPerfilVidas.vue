@@ -10,7 +10,22 @@
             <div>Selton Mello (você)</div>
           </div>
           <div class="item-secondary">
-            <i ref="target3">more_vert</i>
+            <i ref="target">more_vert</i>
+
+            <q-popover ref="popover">
+              <div class="list">
+                <div class="item item-link" @click="$refs.popover.close()">
+                  <div class="item-content">Detalhar</div>
+                </div>
+                <div class="item item-link" @click="$refs.popover.close()">
+                  <div class="item-content">Relacionar convênio</div>
+                </div>
+                <div class="item item-link" @click="$refs.popover.close()">
+                  <div class="item-content">Excluir</div>
+                </div>
+              </div>
+            </q-popover>
+
           </div>
         </div>
         <hr>
@@ -21,6 +36,21 @@
           </div>
           <div class="item-secondary">
             <i ref="target">more_vert</i>
+
+            <q-popover ref="popover">
+              <div class="list">
+                <div class="item item-link" @click="$refs.popover.close()">
+                  <div class="item-content">Detalhar</div>
+                </div>
+                <div class="item item-link" @click="$refs.popover.close()">
+                  <div class="item-content">Relacionar convênio</div>
+                </div>
+                <div class="item item-link" @click="$refs.popover.close()">
+                  <div class="item-content">Excluir</div>
+                </div>
+              </div>
+            </q-popover>
+
           </div>
         </div>
         <hr>
@@ -30,62 +60,35 @@
             <div>Criatine Silva</div>
           </div>
           <div class="item-secondary">
-            <i ref="target2">more_vert</i>
+            <i ref="target">more_vert</i>
+
+            <q-popover ref="popover">
+              <div class="list">
+                <div class="item item-link" @click="$refs.popover.close()">
+                  <div class="item-content">Detalhar</div>
+                </div>
+                <div class="item item-link" @click="$refs.popover.close()">
+                  <div class="item-content">Relacionar convênio</div>
+                </div>
+                <div class="item item-link" @click="$refs.popover.close()">
+                  <div class="item-content">Excluir</div>
+                </div>
+              </div>
+            </q-popover>
+
           </div>
         </div>
       </div>
 
-      <quasar-popover ref="popover" anchor-ref="target">
-        <div class="list">
-          <div class="item item-link" @click="$refs.popover.close()">
-            <div class="item-content">Detalhar</div>
-          </div>
-          <div class="item item-link" @click="$refs.popover.close()">
-            <div class="item-content">Relacionar convênio</div>
-          </div>
-          <div class="item item-link" @click="$refs.popover.close()">
-            <div class="item-content">Excluir</div>
-          </div>
-        </div>
-      </quasar-popover>
-
-      <quasar-popover ref="popover" anchor-ref="target2">
-        <div class="list">
-          <div class="item item-link" @click="$refs.popover.close()">
-            <div class="item-content">Detalhar</div>
-          </div>
-          <div class="item item-link" @click="$refs.popover.close()">
-            <div class="item-content">Relacionar convênio</div>
-          </div>
-          <div class="item item-link" @click="$refs.popover.close()">
-            <div class="item-content">Excluir</div>
-          </div>
-        </div>
-      </quasar-popover>
-
-      <quasar-popover ref="popover" anchor-ref="target3">
-        <div class="list">
-          <div class="item item-link" @click="$refs.popover.close()">
-            <div class="item-content">Detalhar</div>
-          </div>
-          <div class="item item-link" @click="$refs.popover.close()">
-            <div class="item-content">Relacionar convênio</div>
-          </div>
-          <div class="item item-link" @click="$refs.popover.close()">
-            <div class="item-content">Excluir</div>
-          </div>
-        </div>
-      </quasar-popover>
-
-      <quasar-fab
+      <q-fab
          class="absolute-bottom-right"
          classNames="red shadow-3"
          active-icon="people"
          icon="person_add"
          direction="up"
          style="right: 25px; bottom: 28px;">
-         <quasar-small-fab class="secondary shadow-3">people</quasar-small-fab><span class="label-small-fab-1 shadow-3">Adicionar vida</span>
-       </quasar-fab>
+         <q-small-fab class="secondary shadow-3">people</q-small-fab><span class="label-small-fab-1 shadow-3">Adicionar vida</span>
+       </q-fab>
 
     </div>
 
